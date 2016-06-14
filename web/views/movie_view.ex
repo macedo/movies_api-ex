@@ -1,7 +1,7 @@
 defmodule MoviesApi.MovieView do
   use MoviesApi.Web, :view
 
-  attributes [:id, :name, :original_name]
+  attributes [:id, :inserted_at, :name, :updated_at, :watched]
 
   def render("index.json", %{movies: movies}) do
     %{data: render_many(movies, MoviesApi.MovieView, "movie.json")}
@@ -13,7 +13,6 @@ defmodule MoviesApi.MovieView do
 
   def render("movie.json", %{movie: movie}) do
     %{id: movie.id,
-      original_name: movie.original_name,
       name: movie.name}
   end
 end

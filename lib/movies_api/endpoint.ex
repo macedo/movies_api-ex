@@ -35,6 +35,6 @@ defmodule MoviesApi.Endpoint do
     key: "_movies_api_key",
     signing_salt: "ZErMYo5a"
 
-  plug Corsica, origins: "*"
+  plug Corsica, origins: "*", allow_headers: ["content-type"]
   plug MoviesApi.Router
 end

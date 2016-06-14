@@ -1,15 +1,17 @@
 defmodule MoviesApi.Movie do
   use MoviesApi.Web, :model
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   schema "movies" do
-    field :original_name, :string
     field :name, :string
+    field :watched, :boolean, default: false
 
     timestamps
   end
 
-  @required_fields ~w(original_name name)
-  @optional_fields ~w()
+  @required_fields ~w(name)
+  @optional_fields ~w(watched)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
