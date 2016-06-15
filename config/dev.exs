@@ -35,7 +35,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :movies_api, MoviesApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "rmacedo",
+  username: "macedo",
   password: "",
   database: "movies_api_dev",
   hostname: "localhost",
